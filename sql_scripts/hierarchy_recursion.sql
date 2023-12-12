@@ -3,7 +3,7 @@
 # construct and (b) recursive CTE. Both methods should work in most modern databases
 # though the START WITH...CONNECT BY is not supported in all databases.
 
-# Table used for this example is in https://github.com/arindamsinha12/scripts/blob/main/data/employee_dataset.csv
+# Table used for this example (employee_dataset.csv) is in https://github.com/arindamsinha12/scripts/tree/main/data
 
 # 1) Using START WITH...CONNECT BY
 SELECT emp.employee_id, emp.employee_name, emp.supervisor_employee_id, sup.employee_name AS supervisor_name
