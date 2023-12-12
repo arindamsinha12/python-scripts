@@ -19,8 +19,8 @@ df.to_sql ***takes over 21 minutes*** to load the data to a Redshift table. With
 that loading time ***reduces to 45 seconds!*** For larger datasets, the gains will be much higher.
 
 ### 2. Detect if a table exists without using information_schema
-How do we check the existence of a table in a database? One option is to do a select from the
-table within a try except block and analysing any exceptions.
+How do we check the existence of a table in a database without using system tables in information_schema?
+One option is to do a select from the table within a try except block and analysing any exceptions.
 
 However, a more elegant solution
 is to try to create the table 'if not exists' with a dummy field name, and checking if the table
