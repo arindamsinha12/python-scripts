@@ -33,4 +33,4 @@ relationship between table columns. The two methods use (a) the START WITH...CON
 and (b) recursive CTE. Both methods should work in most modern databases though the
 START WITH...CONNECT BY is not supported in all databases.
 
-Table used for this example is this [employee_dataset.csv](https://github.com/arindamsinha12/scripts/blob/main/data/employee_dataset.csv)
+Table used for this example is this [employee_dataset.csv](https://github.com/arindamsinha12/scripts/tree/main/data)
