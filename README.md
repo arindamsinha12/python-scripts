@@ -14,7 +14,7 @@ This script provides a much faster method by using the following optimizations:
 3. Load the files on S3 to the Redshift table in parallel using COPY command with file prefix
 4. The CSV files are gzipped to make above three steps even faster
 
-With the [sample dataset](https://github.com/arindamsinha12/python-scripts/tree/main/data), the
+With the [sample dataset](https://github.com/arindamsinha12/scripts/tree/main/data), the
 df.to_sql ***takes over 21 minutes*** to load the data to a Redshift table. With the above optimizations,
 that loading time ***reduces to 45 seconds!*** For larger datasets, the gains will be much higher.
 
@@ -26,3 +26,11 @@ However, a more elegant solution
 is to try to create the table 'if not exists' with a dummy field name, and checking if the table
 got created. Does require CREATE permission in the schema. This example is in Snowflake but the
 method will work in any database.
+
+### 3. Two ways of recursively finding a hierarchy in SQL
+This SQL script shows two ways in which we can recursively find a hierarchy using a parent child
+relationship between table columns. The two methods use (a) the START WITH...CONNECT BY construct
+and (b) recursive CTE. Both methods should work in most modern databases though the
+START WITH...CONNECT BY is not supported in all databases.
+
+Table used for this example is this [sample dataset](https://github.com/arindamsinha12/scripts/blob/main/data/employee_dataset.csv)
