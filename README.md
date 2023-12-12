@@ -1,4 +1,4 @@
-# python-scripts
+# scripts
 
 I have started to build up this repository to put down some of my learnings over years as a data professional.
 
@@ -17,3 +17,12 @@ This script provides a much faster method by using the following optimizations:
 With the [sample dataset](https://github.com/arindamsinha12/python-scripts/tree/main/data), the
 df.to_sql ***takes over 21 minutes*** to load the data to a Redshift table. With the above optimizations,
 that loading time ***reduces to 45 seconds!*** For larger datasets, the gains will be much higher.
+
+### 2. Detect if a table exists without using information_schema
+How do we check the existence of a table in a database? One option is to do a select from the
+table within a try except block and analysing any exceptions.
+
+However, a more elegant solution
+is to try to create the table 'if not exists' with a dummy field name, and checking if the table
+got created. Does require CREATE permission in the schema. This example is in Snowflake but the
+method will work in any database.
