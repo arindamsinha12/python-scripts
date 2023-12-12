@@ -10,7 +10,7 @@ This script provides a much faster method by using the following optimizations:
 3) Load the files on S3 to the Redshift table in parallel using COPY command with file prefix
 4) The CSV files are gzipped to make above three steps even faster
 
-With the sample dataset in https://github.com/arindamsinha12/python-scripts/tree/main/data, the
+With the sample dataset in https://github.com/arindamsinha12/scripts/tree/main/data/trade_transactions.csv, the
 df.to_sql takes over 21 minutes to load the data to Redshift. With the above optimizations,
 that loading time reduces to 45 seconds! For larger datasets, the gains will be much higher.
 """
