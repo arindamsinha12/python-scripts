@@ -14,7 +14,7 @@ This script provides a much faster method by using the following optimizations:
 3. Load the files on S3 to the Redshift table in parallel using COPY command with file prefix
 4. The CSV files are gzipped to make above three steps even faster
 
-With the [sample dataset](https://github.com/arindamsinha12/scripts/tree/main/data), the
+With the sample dataset [trade_transactions.csv](https://github.com/arindamsinha12/scripts/tree/main/data), the
 df.to_sql ***takes over 21 minutes*** to load the data to a Redshift table. With the above optimizations,
 that loading time ***reduces to 45 seconds!*** For larger datasets, the gains will be much higher.
 
@@ -33,4 +33,4 @@ relationship between table columns. The two methods use (a) the START WITH...CON
 and (b) recursive CTE. Both methods should work in most modern databases though the
 START WITH...CONNECT BY is not supported in all databases.
 
-Table used for this example is this [sample dataset](https://github.com/arindamsinha12/scripts/blob/main/data/employee_dataset.csv)
+Table used for this example is this [employee_dataset.csv](https://github.com/arindamsinha12/scripts/blob/main/data/employee_dataset.csv)
