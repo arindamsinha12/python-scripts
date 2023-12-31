@@ -18,6 +18,8 @@ With the sample dataset [trade_transactions.csv](https://github.com/arindamsinha
 df.to_sql ***takes over 21 minutes*** to load the data to a Redshift table. With the above optimizations,
 that loading time ***reduces to 45 seconds!*** For larger datasets, the gains will be much higher.
 
+Script: [fast_save_df_to_redshift.py](https://github.com/arindamsinha12/scripts/blob/main/python_scripts/fast_save_df_to_redshift.py)
+
 ### 2. Detect if a table exists without using information_schema
 How do we check the existence of a table in a database without using system tables in information_schema?
 One option is to do a select from the table within a try except block and analysing any exceptions.
@@ -26,6 +28,8 @@ However, a more elegant solution is to try to create the table 'if not exists' w
 checking if the table got created. Does require CREATE permission in the schema. This example is in Snowflake
 but the method will work in any database.
 
+Script: [check_table_exists_snowflake.py](https://github.com/arindamsinha12/scripts/blob/main/python_scripts/check_table_exists_snowflake.py)
+
 ### 3. Two ways of recursively finding a hierarchy in SQL
 This SQL script shows two ways in which we can recursively find a hierarchy using a parent child
 relationship between table columns. The two methods use (a) the START WITH...CONNECT BY construct
@@ -33,6 +37,8 @@ and (b) recursive CTE. Both methods should work in most modern databases though 
 START WITH...CONNECT BY is not supported in all databases.
 
 Table used for this example is this [employee_dataset.csv](https://github.com/arindamsinha12/scripts/tree/main/data)
+
+Script: [hierarchy_recursion.sql](https://github.com/arindamsinha12/scripts/blob/main/sql_scripts/hierarchy_recursion.sql)
 
 ### 4. Python job scheduler
 
@@ -67,3 +73,4 @@ should be used by the job (which in this case is defined as a function) to obtai
 Sample config file [sched_config.yml](https://github.com/arindamsinha12/scripts/tree/main/config) is used for
 this example.
 
+Script: [python_scheduling.py](https://github.com/arindamsinha12/scripts/blob/main/python_scripts/python_scheduling.py)
