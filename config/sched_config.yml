@@ -1,0 +1,16 @@
+common:
+    stop_scheduler: false  # If set to true, the scheduler will exit gracefully
+    email_secret_name: <<Your Secret Name>>  # Name of Secret, e.g. for AWS Secrets Manager
+    email_sender: <<Email Address of Sender>>  # Sender of emails
+    run_all_immediately: false  # Run all scheduled jobs immediately. Resets automatically
+    sleep_duration: 10  # Wait period in seconds between loops
+job_a:  # Job to be run. This will be a function name in the Python scripts. Any number of jobs can be added
+    arguments: John,Smith  # Any arguments to be sent to the job
+    email_receivers: johnsmith.imaginary@gmail.com,janedoe.imaginary@outlook.com  # Email alert receivers for job_a
+    run_immediately: false  # If set to true, job_a will run immediately. Useful for rerunning job. Resets automatically
+    run_time: '10:00'  # scheduled run time for job_a
+job_b:  # Job to be run. This will be a function name in the Python scripts. Any number of jobs can be added
+    arguments: Jane,Doe  # Any arguments to be sent to the job
+    email_receivers: johnsmith.imaginary@gmail.com,janedoe.imaginary@outlook.com  # Email alert receivers for job_b
+    run_immediately: false  # If set to true, job_a will run immediately. Useful for rerunning job. Resets automatically
+    run_time: '10:30'  # scheduled run time for job_b

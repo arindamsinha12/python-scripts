@@ -1,4 +1,4 @@
-# scripts
+# Useful Python and SQL code patterns
 
 I have started to build up this repository to put down some of my learnings over years as a data professional.
 
